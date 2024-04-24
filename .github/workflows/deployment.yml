@@ -1,5 +1,8 @@
 name: deploy portifolio
-on: [push]
+on: 
+  push:
+    branches:
+      - main
 jobs:
   lint:
     runs-on: ubuntu-latest
