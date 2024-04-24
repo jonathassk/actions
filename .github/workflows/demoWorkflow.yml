@@ -1,0 +1,11 @@
+name: Demo workflow pull request
+on:
+    pull_request:
+        types: [opened]
+    workflow_dispatch: 
+jobs:
+    echo_pr_title:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get PR title
+              run: echo "PR title is ${{ github.event.pull_request.title }}"
