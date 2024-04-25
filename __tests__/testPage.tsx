@@ -6,7 +6,7 @@ import React from 'react';
 describe('Home component', () => {
   test('renders welcome message', () => {
     const {getByText} = render(<Page/>);
-    const welcomeMessage = getByText('Welcome to your new project!');
+    const welcomeMessage = getByText('Welcome to your new projects!');
     expect(welcomeMessage).toBeInTheDocument();
   });
 });
