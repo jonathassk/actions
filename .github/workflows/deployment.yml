@@ -5,8 +5,12 @@ on:
       - main
     paths-ignore: 
       - '.github/**'
+env: 
+  NODE_ENV: exemplo_de_variavel_de_ambiente_todos_os_jobs
 jobs:
   lint:
+    env: 
+      NODE_ENV: exemplo_de_variavel_de_ambiente_apenas_este_job
     runs-on: ubuntu-latest
     steps:
       - name: Get code
