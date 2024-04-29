@@ -7,7 +7,7 @@ type ButtonProps = {
 }
 const Button = ({ type, title, color }: ButtonProps) => {
   return (
-    <button type={type} className={`text-white font-bold py-4 px-4 rounded-full transition-all opacity-85 hover:opacity-100 ${color}`}> {title} </button>
+    <button type={type} className={`text-white font-bold p-2 rounded-md transition-all opacity-70 hover:opacity-100 ${color}`}> {title} </button>
   );
 
 }
