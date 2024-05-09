@@ -1,5 +1,3 @@
-import {string} from "prop-types";
-
 interface NavLink {
   href: string;
   key: string;

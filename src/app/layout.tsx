@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   title: "AI Travel Assistant",
   description: "A travel assistant that helps you plan your trips using AI.",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
