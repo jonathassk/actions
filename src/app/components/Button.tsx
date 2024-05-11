@@ -8,7 +8,7 @@ type ButtonProps = {
 }
 const Button = ({ type, title, color, colorDarkMode }: ButtonProps) => {
   return (
-    <button type={type} className={`text-white dark:text-black font-bold p-2 rounded-md transition-all opacity-70 hover:opacity-100 ${color} dark:${colorDarkMode}`}> {title} </button>
+    <button type={type} className={`text-white dark:text-white font-bold p-2 rounded-md transition-all opacity-70 hover:opacity-100 ${color} dark:${colorDarkMode}`}> {title} </button>
   );
 
 }
