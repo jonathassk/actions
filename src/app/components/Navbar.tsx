@@ -9,7 +9,7 @@ import Button from './Button';
 const Navbar = () => {
   return (
     <nav
-      className="fixed z-40 w-full border-b dark:border-gray-700 bg-white dark:bg-gray-800 md:bg-transparent">
+      className="fixed z-40 w-full border-b dark:border-gray-700 bg-white dark:bg-gray-800 md:bg-transparent py-2">
       <div className="container m-auto px-2 md:px-12 lg:px-7 bg-white dark:bg-gray-800">
         <div className="flex px-6 md:px-0 z-20 flex-wrap items-center justify-between py-1 gap-6 md:py-1 md:gap-0">
           <input type="checkbox" name="" id="toggleNav" className="peer hidden"/>
