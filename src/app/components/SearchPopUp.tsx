@@ -7,33 +7,36 @@ interface SearchPopUpProps {
   city: Travel;
   toggleFocus: () => void;
 }
+
+interface SearchPopUp { 
+  consoleValue: (recent: string) => void;
+}
 export const SearchPopUp: React.FC<SearchPopUpProps> = ({ searchIsFocused, city, toggleFocus }) => {
   const [recents, setRecents] = useState<string[]>([]);
 
   useEffect(() => {
     const recentDestinations = JSON.parse(localStorage.getItem('recentDestinations') || '[]');
     setRecents(recentDestinations);
-    console.log("alo");
-    console.log(searchIsFocused);
+    console.log(city)
   }, []);
 
-
-  const handleDivClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    toggleFocus();
-  };
+  const consoleValue = (recent: string): void => {
+    console.log('clicked')
+    console.log(recent)
+  }
 
   return (
-    <div onClick={handleDivClick}>
+    <div>
       {searchIsFocused ?
         <div className="max-[640px]:w-full h-80 bg-slate-300 relative top-[10px] rounded-md">
           <div>
             {city.destination}
           </div>
           <div>
-            {recents.map((recent, index) => {
+            {!city.destination && recents.map((recent, index) => {
               return (
                 <div key={recent}>
-                  {recent}
+                  <button onClick={() => consoleValue(recent)}>{recent}</button>
                 </div>
               )
             })}

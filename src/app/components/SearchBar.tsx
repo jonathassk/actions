@@ -1,6 +1,5 @@
 import React, { useRef, useReducer, Dispatch } from 'react';
 import { SearchPopUp } from './SearchPopUp';
-import { createContext } from 'vm';
 import { CityReducer, initialState, Travel, Action } from '../reducers/cityReducer';
 
 const SearchBar: React.FC = () => {
@@ -33,18 +32,21 @@ const SearchBar: React.FC = () => {
 
   const toggleFocus = () => {
     setIsFocused(true);
+    console.log("focus");
   }
 
   const toggleBlur = () => {
     setIsFocused(false);
   }
   return (
-    <div className='px-20 max-[530px]:px-4 w-full' onFocus={toggleFocus} onBlur={toggleBlur} onClick={toggleFocus}>
+    <div className='px-20 max-[530px]:px-4 w-full'>
       <div className='flex mx-auto content-center'>
         <input
           id="Destination"
           type="text"
           className="px-3 text-lg text-gray-800 border-2 border-gray-300 rounded-md h-16 decoration-0 w-full relative left-10 max-[640px]:left-0 max-[640px]:rounded-none bg-gray-100 focus:outline-none focus:bg-white rounded-l-lg"
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setTimeout(() => setIsFocused(false), 400)}
           onChange={sendSearchValue}
         />
         <button
